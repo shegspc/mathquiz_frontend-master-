@@ -1,0 +1,15 @@
+.result-tray{
+    position: relative;
+}
+
+.results-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .results-list__fallback {
+    color: white;
+    text-align: center;
+  }
+  
+ 
