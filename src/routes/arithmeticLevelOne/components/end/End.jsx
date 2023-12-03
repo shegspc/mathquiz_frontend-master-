@@ -18,6 +18,7 @@ const End = () => {
     // const { enteredTable, setEnteredTable } = useContext(QuizContext);
     const { verdict, setVerdict } = useContext(QuizContext);
     const { questionCounter, setQuestionCounter } = useContext(QuizContext);
+    const [data,  setData] = useState("") 
 
 
 
@@ -92,8 +93,16 @@ const End = () => {
 
 const userId = user._id 
   
- const {data}  = useFetch(`https://mymathquizapi.onrender.com/backend/arithmeticResult/getResult/${userId}`);
+//  const {data}  = useFetch(`https://mymathquizapi.onrender.com/backend/arithmeticResult/getResult/${userId}`);
  
+useEffect(()=> {
+  fetch(`https://mymathquizapi.onrender.com/backend/arithmeticResult/getResult/${userId}`)
+  .then((res)=> res.json())
+  .then((result)=> setData(result))
+},[]);
+
+console.log(data);
+
  return <div className="End fadeIn delay-0_3">
  <div className="terminal-wrapper">
      <div className="terminal-top ">
